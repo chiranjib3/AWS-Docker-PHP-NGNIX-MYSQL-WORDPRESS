@@ -35,7 +35,7 @@ services:
     depends_on:
       - wordpress
     image: php:7.3-apache
-    container_name: wordpress
+    container_name: PHP
     restart: unless-stopped
     volumes:
       - wordpress:/var/www/html

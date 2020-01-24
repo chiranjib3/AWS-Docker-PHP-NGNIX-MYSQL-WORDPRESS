@@ -45,20 +45,9 @@ phpmyadmin:
     networks:
       - app-network
 
-  php:
-    depends_on:
-      - wordpress
-    image: php:7.3-apache
-    container_name: PHP
-    restart: unless-stopped
-    volumes:
-      - wordpress:/var/www/html
-    networks:
-      - app-network
-
   webserver:
     depends_on:
-      - php
+      - wordpress
     image: nginx:1.15.12-alpine
     container_name: webserver
     restart: unless-stopped
